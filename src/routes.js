@@ -4,6 +4,10 @@ const { createUsers, loggedUsers } = require("./controllers/users");
 const { createInfluencers, getInfluencers, updateInfluencers, deleteInfluencers, filterInfluencers } = require("./controllers/influencers");
 const authMiddleware = require("./middlewares/auth");
 
+router.get("/", (req, res) => {
+  res.send("Bem vindo à API")
+});
+
 router.post("/sign-up", createUsers);
 router.post("/sign-in", loggedUsers);
 
