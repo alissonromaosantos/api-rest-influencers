@@ -107,6 +107,16 @@ npm run dev
 
 Isso iniciará o servidor usando o nodemon, que reiniciará automaticamente o servidor sempre que forem feitas alterações no código.
 
+## Funcionalidades da API
+
+1. Cadastrar um usuário gerando senha criptografada
+2. Login de usuário e geração de token de autenticação
+3. Listar Influenciadores cadastrados
+4. Cadastrar influenciadores
+5. Atualizar um registro de um influenciador
+6. Deletar um registro de influenciador
+7. Filtrar influenciadores por nome, categoria ou inscritos
+
 ## License
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
