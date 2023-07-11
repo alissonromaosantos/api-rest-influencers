@@ -46,7 +46,7 @@ O projeto usa Knex.js para se conectar ao banco de dados PostgreSQL. A configura
 
 ```javascript
 development: {
-  client: 'pg',
+  client: "pg",
   connection: {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
@@ -55,10 +55,10 @@ development: {
     password: process.env.DB_PASSWORD
   },
   migrations: {
-    directory: './db/migrations'
+    directory: "./db/migrations"
   },
   seeds: {
-    directory: './db/seeds'
+    directory: "./db/seeds"
   }
 },
 ```

@@ -1,14 +1,14 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 function authMiddleware(req, res, next) {
-  const token = req.headers.authorization?.split(' ')[1];
+  const token = req.headers.authorization?.split(" ")[1];
 
   if (!token) {
-    return res.status(401).json({ message: 'Token não fornecido' });
+    return res.status(401).json({ message: "Token não fornecido" });
   }
 
   try {
-    const decodedToken = jwt.verify(token, 'token');
+    const decodedToken = jwt.verify(token, "token");
 
     const userId = decodedToken.id;
 
@@ -16,7 +16,7 @@ function authMiddleware(req, res, next) {
 
     next();
   } catch (error) {
-    return res.status(401).json({ message: 'Token inválido' });
+    return res.status(401).json({ message: "Token inválido" });
   }
 }
 

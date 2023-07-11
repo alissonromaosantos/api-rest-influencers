@@ -51,7 +51,7 @@ describe("POST /sign-in", () => {
     server.close();
   });
 
-  it('Deve logar um usuário com sucesso', async () => {
+  it("Deve logar um usuário com sucesso", async () => {
     await request(server)
       .post("/sign-up")
       .send({

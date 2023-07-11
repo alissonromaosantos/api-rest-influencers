@@ -1,5 +1,5 @@
 require("dotenv").config({  
-  path: process.env.NODE_ENV.trim() == 'test' ? ".env.test" : ".env"
+  path: process.env.NODE_ENV.trim() == "test" ? ".env.test" : ".env"
 })
 
 const { knex } = require("knex");
