@@ -1,0 +1,25 @@
+{
+  "name": "api-rest-influencers",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development && nodemon ./src/server.js --ignore tests",
+    "start": "set NODE_ENV=production && node ./src/server.js",
+    "test": "jest ./test/routes.test.js --detectOpenHandles --forceExit",
+    "migrate": "npx knex migrate:latest"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "knex": "^2.5.0",
+    "pg": "^8.11.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
+  }
+}
