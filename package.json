@@ -2,8 +2,11 @@
   "name": "api-rest-influencers",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
-    "start": "node ./src/server.js",
+    "start": "set NODE_ENV=production node ./src/server.js",
     "dev": "set NODE_ENV=development && nodemon ./src/server.js --ignore tests",
     "test": "jest ./test/routes.test.js --detectOpenHandles --forceExit",
     "migrate": "npx knex migrate:latest"
