@@ -6,8 +6,8 @@
     "node": "18"
   },
   "scripts": {
-    "start": "set NODE_ENV=production node ./src/server.js",
-    "dev": "set NODE_ENV=development && nodemon ./src/server.js --ignore tests",
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js --ignore tests",
     "test": "jest ./test/routes.test.js --detectOpenHandles --forceExit",
     "migrate": "npx knex migrate:latest"
   },
