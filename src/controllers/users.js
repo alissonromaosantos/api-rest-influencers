@@ -14,10 +14,9 @@ const createUsers = async (req, res) => {
 
     await knex("users").insert({ name, email, age, password: hashedPassword });
 
-    return res.status(201).json({ message: "Usuário cadastrado com sucesso!", result: { name, email, age } });
+    return res.status(201).json({ message: "Usuário cadastrado com sucesso!" });
     
   } catch (error) {
-    console.log(error);
     return res.status(500).json({ message: "Erro ao cadastrar o usuário" });
   }
 };
@@ -26,7 +25,7 @@ const loggedUsers = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(403).json({ message: "Preencha o campo email e senha!" });
+    return res.status(401).json({ message: "Preencha o campo email e senha!" });
   }
 
   try {

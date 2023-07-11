@@ -5,7 +5,7 @@ const createInfluencers = async (req, res) => {
   const userId = req.userId;
 
   if (!name || !subscribers || !channel || !plataform || !category) {
-    return res.status(400).json({ message: "Preencha todos os campos!" });
+    return res.status(401).json({ message: "Preencha todos os campos!" });
   }
 
   try {
@@ -78,6 +78,10 @@ const filterInfluencers = async (req, res) => {
   const { category, name, subscribers } = req.query;
   const userId = req.userId;
 
+   if (!name && !category && !subscribers) {
+    return res.status(401).json({ message: "Você deve informar nome, categoria ou inscritos para filtrar um influenciador" })
+  }
+
   try {
     let query = knex("influencers").where({ user_id: userId });
 
@@ -90,10 +94,14 @@ const filterInfluencers = async (req, res) => {
     }
 
     if (subscribers) {
-      query = query.where("subscribers", ">=", subscribers);
+      query = query.where("subscribers", "<=", subscribers);
     }
 
-    const influencers = await query.select('*');
+    const influencers = await query.select("*");
+
+    if (influencers.length === 0) {
+      return res.status(404).json({ message: "Nenhum influenciador foi encontrado" });
+    }
 
     return res.status(200).json(influencers);
   } catch (error) {

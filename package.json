@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "start": "node ./src/server.js",
     "dev": "set NODE_ENV=development && nodemon ./src/server.js --ignore tests",
-    "start": "set NODE_ENV=production && node ./src/server.js",
     "test": "jest ./test/routes.test.js --detectOpenHandles --forceExit",
     "migrate": "npx knex migrate:latest"
   },
