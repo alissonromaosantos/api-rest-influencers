@@ -6,11 +6,11 @@
     "node": "18"
   },
   "scripts": {
-    "start": "node ./src/server.js && npm run migrate",
+    "start": "node ./src/server.js && yarn run migrate",
     "build": "yarn install",
     "dev": "nodemon ./src/server.js --ignore tests",
     "test": "jest ./test/routes.test.js --detectOpenHandles --forceExit",
-    "migrate": "npx knex migrate:latest"
+    "migrate": "yarn knex migrate:latest"
   },
   "license": "MIT",
   "dependencies": {
